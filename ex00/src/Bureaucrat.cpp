@@ -24,15 +24,32 @@ int Bureaucrat::getGrade() const
 	return (_grade);
 }
 
+void Bureaucrat::incrementGrade()
+{
+	if (_grade <= 1)
+		throw GradeTooHighException();
+	else
+		_grade--;
+}
+
+void Bureaucrat::decrementGrade()
+{
+	if (_grade >= 150)
+		throw GradeTooLowException();
+	else
+		_grade++;
+}
+
 /* **************************Orthodox_Canonical_Form************************* */
 
-Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(1)
+Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(0)
 {
 	std::cout << GRN << *this << " called default constructor" << NC
 			  << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &rhs) : _name(rhs._name)
+Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
+	: _name(rhs._name), _grade(rhs._grade)
 {
 	std::cout << GRN << *this << " called Copy constructor" << NC << std::endl;
 }
@@ -57,7 +74,7 @@ Bureaucrat::~Bureaucrat()
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
-	out << bureaucrat.getName() << " is a bureaucrat with a grade of "
+	out << bureaucrat.getName() << ", bureaucrat grade "
 		<< bureaucrat.getGrade();
 	return (out);
 }

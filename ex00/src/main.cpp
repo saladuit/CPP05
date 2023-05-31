@@ -12,17 +12,50 @@
 
 #include <Bureaucrat.hpp>
 
-void testBureaucrat(void)
+int main()
 {
-	Bureaucrat bureaucrat;
-	std::cout << "\n---Creating objects with default constructor---\n";
-}
+	// Testing default constructor
+	Bureaucrat joe;
 
-int main(void)
-{
-	std::cout << "\n---Testing Bureaucrat---\n";
-	testBureaucrat();
-	return (EXIT_SUCCESS);
+	std::cout << "\n--Testing with a valid grade--\n";
+	try
+	{
+		joe.incrementGrade();
+		std::cout << joe << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << "\n--Testing GradeTooHighException--\n";
+	try
+	{
+		for (int i = 0; i < 2; i++)
+			joe.incrementGrade();
+		std::cout << joe << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	// Reset joe's grade to a valid value
+	joe.decrementGrade();
+
+	std::cout << "\n--Testing GradeTooLowException--\n";
+	try
+	{
+		for (int i = 0; i < 151; i++)
+			joe.decrementGrade();
+		std::cout << joe << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	return 0;
 }
 
 /* ************************************************************************** */
