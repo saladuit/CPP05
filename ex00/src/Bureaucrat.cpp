@@ -42,7 +42,7 @@ void Bureaucrat::decrementGrade()
 
 /* **************************Orthodox_Canonical_Form************************* */
 
-Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(0)
+Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(150)
 {
 	std::cout << GRN << *this << " called default constructor" << NC
 			  << std::endl;

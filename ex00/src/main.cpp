@@ -14,7 +14,6 @@
 
 int main()
 {
-	// Testing default constructor
 	Bureaucrat joe;
 
 	std::cout << "\n--Testing with a valid grade--\n";
@@ -40,7 +39,6 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	// Reset joe's grade to a valid value
 	joe.decrementGrade();
 
 	std::cout << "\n--Testing GradeTooLowException--\n";
@@ -55,7 +53,7 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	return 0;
+	return (EXIT_SUCCESS);
 }
 
 /* ************************************************************************** */
