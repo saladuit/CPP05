@@ -1,0 +1,624 @@
+[
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/Zombie.cpp",
+   "-o",
+   "build/Zombie.o"
+  ],
+  "file": "src/Zombie.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/newZombie.cpp",
+   "-o",
+   "build/newZombie.o"
+  ],
+  "file": "src/newZombie.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/randomChump.cpp",
+   "-o",
+   "build/randomChump.o"
+  ],
+  "file": "src/randomChump.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/Zombie.cpp",
+   "-o",
+   "build/Zombie.o"
+  ],
+  "file": "src/Zombie.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/zombieHorde.cpp",
+   "-o",
+   "build/zombieHorde.o"
+  ],
+  "file": "src/zombieHorde.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex03",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/Weapon.cpp",
+   "-o",
+   "build/Weapon.o"
+  ],
+  "file": "src/Weapon.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex03",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/HumanA.cpp",
+   "-o",
+   "build/HumanA.o"
+  ],
+  "file": "src/HumanA.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex03",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/HumanB.cpp",
+   "-o",
+   "build/HumanB.o"
+  ],
+  "file": "src/HumanB.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex03",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex04",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++11",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex04",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++11",
+   "-Iinclude/",
+   "-c",
+   "src/FtSed.cpp",
+   "-o",
+   "build/FtSed.o"
+  ],
+  "file": "src/FtSed.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex05",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/Harl.cpp",
+   "-o",
+   "build/Harl.o"
+  ],
+  "file": "src/Harl.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP01/ex05",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP02/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/Fixed.cpp",
+   "-o",
+   "build/Fixed.o"
+  ],
+  "file": "src/Fixed.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP02/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP03/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/ClapTrap.cpp",
+   "-o",
+   "build/ClapTrap.o"
+  ],
+  "file": "src/ClapTrap.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP03/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/Animal.cpp",
+   "-o",
+   "build/Animal.o"
+  ],
+  "file": "src/Animal.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/Dog.cpp",
+   "-o",
+   "build/Dog.o"
+  ],
+  "file": "src/Dog.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-fsanitize=address,undefined",
+   "-Iinclude/",
+   "-c",
+   "src/Animal.cpp",
+   "-o",
+   "build/Animal.o"
+  ],
+  "file": "src/Animal.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-fsanitize=address,undefined",
+   "-Iinclude/",
+   "-c",
+   "src/Brain.cpp",
+   "-o",
+   "build/Brain.o"
+  ],
+  "file": "src/Brain.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-fsanitize=address,undefined",
+   "-Iinclude/",
+   "-c",
+   "src/Cat.cpp",
+   "-o",
+   "build/Cat.o"
+  ],
+  "file": "src/Cat.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-fsanitize=address,undefined",
+   "-Iinclude/",
+   "-c",
+   "src/Dog.cpp",
+   "-o",
+   "build/Dog.o"
+  ],
+  "file": "src/Dog.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-fsanitize=address,undefined",
+   "-Iinclude/",
+   "-c",
+   "src/WrongAnimal.cpp",
+   "-o",
+   "build/WrongAnimal.o"
+  ],
+  "file": "src/WrongAnimal.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-fsanitize=address,undefined",
+   "-Iinclude/",
+   "-c",
+   "src/WrongCat.cpp",
+   "-o",
+   "build/WrongCat.o"
+  ],
+  "file": "src/WrongCat.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-fsanitize=address,undefined",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex02",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-Iinclude/",
+   "-c",
+   "src/Animal.cpp",
+   "-o",
+   "build/Animal.o"
+  ],
+  "file": "src/Animal.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex02",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-Iinclude/",
+   "-c",
+   "src/Brain.cpp",
+   "-o",
+   "build/Brain.o"
+  ],
+  "file": "src/Brain.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex02",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-Iinclude/",
+   "-c",
+   "src/Cat.cpp",
+   "-o",
+   "build/Cat.o"
+  ],
+  "file": "src/Cat.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex02",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-Iinclude/",
+   "-c",
+   "src/Dog.cpp",
+   "-o",
+   "build/Dog.o"
+  ],
+  "file": "src/Dog.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex02",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-Iinclude/",
+   "-c",
+   "src/WrongAnimal.cpp",
+   "-o",
+   "build/WrongAnimal.o"
+  ],
+  "file": "src/WrongAnimal.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex02",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-Iinclude/",
+   "-c",
+   "src/WrongCat.cpp",
+   "-o",
+   "build/WrongCat.o"
+  ],
+  "file": "src/WrongCat.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP04/ex02",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-g",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
+ }
+]
