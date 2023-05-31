@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    .--.  _                 */
-/*   Animal.hpp                                      |o_o || |                */
+/*   Bureaucrat.hpp                                  |o_o || |                */
 /*                                                   |:_/ || |_ _   ___  __   */
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
-/*   Created: 2023/05/31 08:57:00 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2023/05/31 08:57:00 by safoh        \___)=(___/                 */
+/*   Created: 2023/05/31 17:48:11 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
+/*   Updated: 2023/05/31 17:48:11 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
-#include <Brain.hpp>
 #include <Color.hpp>
 #include <iostream>
 #include <ostream>
 #include <string>
 
-class Animal
+class Bureaucrat
 {
   public:
-	Animal();
-	Animal(const Animal &rhs);
-	Animal &operator=(const Animal &rhs);
-	virtual ~Animal();
-	virtual void makeSound() const = 0;
-	virtual void setType(const std::string &type);
-	virtual const std::string &getType() const;
+	Bureaucrat();
+	Bureaucrat(const Bureaucrat &rhs);
+	Bureaucrat &operator=(const Bureaucrat &rhs);
+	~Bureaucrat();
+	std::string getName() const;
+	int getGrade() const;
 
-  protected:
-	std::string _type;
+  private:
+	std::string _name;
+	int _grade;
 };
 
-std::ostream &operator<<(std::ostream &out, const Animal &animal);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &animal);
 #endif
 
 /* ************************************************************************** */

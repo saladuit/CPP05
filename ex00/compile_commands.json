@@ -620,5 +620,39 @@
    "build/main.o"
   ],
   "file": "src/main.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP05/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/Bureaucrat.cpp",
+   "-o",
+   "build/Bureaucrat.o"
+  ],
+  "file": "src/Bureaucrat.cpp"
+ },
+ {
+  "directory": "/Users/safoh/repos/CPP/CPP05/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Wpedantic",
+   "-std=c++98",
+   "-Iinclude/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.cpp"
  }
 ]
