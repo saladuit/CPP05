@@ -74,7 +74,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
 	if (this != &rhs)
 	{
-		_name = rhs._name;
 		_grade = rhs._grade;
 		std::cout << GRN
 				  << "Bureaucrat's assignment operator called, attributes:"
