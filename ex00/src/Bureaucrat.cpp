@@ -26,7 +26,7 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementGrade()
 {
-	if (_grade <= 1)
+	if (_grade <= MAX_GRADE)
 		throw GradeTooHighException();
 	else
 		_grade--;
@@ -34,7 +34,7 @@ void Bureaucrat::incrementGrade()
 
 void Bureaucrat::decrementGrade()
 {
-	if (_grade >= 150)
+	if (_grade >= MIN_GRADE)
 		throw GradeTooLowException();
 	else
 		_grade++;
@@ -45,13 +45,17 @@ void Bureaucrat::decrementGrade()
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	: _name(name), _grade(grade)
 {
+	if (_grade < MAX_GRADE)
+		throw GradeTooHighException();
+	if (_grade > MIN_GRADE)
+		throw GradeTooLowException();
 	std::cout << GRN
 			  << "Bureaucrat's parameterized constructor called, attributes:"
 			  << std::endl
 			  << *this << NC;
 }
 
-Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(MIN_GRADE)
 {
 	std::cout << GRN << "Bureaucrat's default constructor called, attributes:"
 			  << std::endl

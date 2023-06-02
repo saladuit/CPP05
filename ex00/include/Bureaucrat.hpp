@@ -13,6 +13,9 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#define MAX_GRADE 1
+#define MIN_GRADE 150
+
 #include <Color.hpp>
 #include <cstdlib>
 #include <iostream>
