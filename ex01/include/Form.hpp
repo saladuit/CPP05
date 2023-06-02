@@ -13,6 +13,7 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include <Bureaucrat.hpp>
 #include <Color.hpp>
 #include <Defines.hpp>
 #include <iostream>
@@ -32,6 +33,7 @@ class Form
 	bool getSignedness() const;
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
+	void beSigned(const Bureaucrat &bureaucrat);
 
 	class GradeTooHighException : public std::exception
 	{

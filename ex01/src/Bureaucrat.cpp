@@ -40,6 +40,18 @@ void Bureaucrat::decrementGrade()
 		_grade++;
 }
 
+bool Bureaucrat::signForm(const std::string &form_name, bool is_signed) const
+{
+	if (is_signed)
+	{
+		std::cout << YEL << _name << " couldn't " << form_name << " because "
+				  << form_name << " is already signed" << NC << std::endl;
+		return (false);
+	}
+	else
+		std::cout << CYN << _name << " signed " << form_name << NC << std::endl;
+	return (true);
+}
 /* **************************Orthodox_Canonical_Form************************* */
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade)

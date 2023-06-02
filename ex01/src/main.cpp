@@ -10,25 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Bureaucrat.hpp>
 #include <Form.hpp>
 
-// void testGradeMod(void (Bureaucrat::*func)(), const int repeatCount)
-// {
-// 	Bureaucrat joe;
-// 	try
-// 	{
-// 		for (int i = 0; i < repeatCount; ++i)
-// 		{
-// 			(joe.*func)();
-// 		}
-// 		std::cout << CYN << joe << NC;
-// 	}
-// 	catch (std::exception &e)
-// 	{
-// 		std::cout << e.what() << std::endl;
-// 	}
-// }
+void testSignForm()
+{
+	try
+	{
+		Bureaucrat joe;
+		Form paper;
+		paper.beSigned(joe);
+		std::cout << CYN << paper << NC;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void testSignFormGradeTooLowException()
+{
+	try
+	{
+		Bureaucrat joe;
+		Form contract("Contract", 1, 1);
+		contract.beSigned(joe);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void testSignFormAlreadySigned()
+{
+	try
+	{
+		Bureaucrat jonas("Jonas", 50);
+		Form contract("Evalsheet", 50, 1);
+		contract.beSigned(jonas);
+		std::cout << CYN << contract << NC;
+		contract.beSigned(jonas);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
 
 void tryToCreateInstance(const std::string &name, const int grade_to_sign,
 						 const int grade_to_execute)
@@ -49,6 +76,10 @@ void testConstructors()
 
 	Form contract(ticket);
 	contract = ticket;
+}
+
+void testParameterizedConstructor()
+{
 	tryToCreateInstance("Parameterized", MIN_GRADE / 2, MIN_GRADE / 2);
 	tryToCreateInstance("ParameterizedSignTooLow", MIN_GRADE + 1,
 						MIN_GRADE / 2);
@@ -64,6 +95,14 @@ int main()
 {
 	std::cout << "\n--Testing constructors--\n";
 	testConstructors();
+	std::cout << "\n--Testing Parameterized constructor--\n";
+	testParameterizedConstructor();
+	std::cout << "\n--Testing SignForm--\n";
+	testSignForm();
+	std::cout << "\n--Testing SignForm GradeTooLowException--\n";
+	testSignFormGradeTooLowException();
+	std::cout << "\n--Testing SignForm already signed--\n";
+	testSignFormAlreadySigned();
 
 	// std::cout << "\n--Testing GradeModifications--\n";
 	// testGradeMod(&Bureaucrat::incrementGrade, 1);

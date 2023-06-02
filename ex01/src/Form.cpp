@@ -34,6 +34,14 @@ int Form::getGradeToExecute() const
 	return (_grade_to_execute);
 }
 
+void Form::beSigned(const Bureaucrat &bureaucrat)
+{
+	std::cout << BCYN << "Checking grade to sign paper" << NC << std::endl;
+	if (bureaucrat.getGrade() > _grade_to_sign)
+		throw Form::GradeTooLowException();
+	_is_signed = bureaucrat.signForm(this->_name, this->_is_signed);
+}
+
 /* **************************Orthodox_Canonical_Form************************* */
 
 Form::Form(const std::string &name, const int grade_to_sign,
