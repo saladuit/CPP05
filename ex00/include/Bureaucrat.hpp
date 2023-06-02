@@ -14,6 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include <Color.hpp>
+#include <cstdlib>
 #include <iostream>
 #include <ostream>
 #include <string>
