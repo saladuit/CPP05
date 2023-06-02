@@ -40,7 +40,7 @@ void Bureaucrat::decrementGrade()
 		_grade++;
 }
 
-bool Bureaucrat::signForm(const std::string &form_name, bool is_signed) const
+bool Bureaucrat::signAForm(const std::string &form_name, bool is_signed) const
 {
 	if (is_signed)
 	{
