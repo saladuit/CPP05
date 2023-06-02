@@ -42,6 +42,15 @@ void Bureaucrat::decrementGrade()
 
 /* **************************Orthodox_Canonical_Form************************* */
 
+Bureaucrat::Bureaucrat(const std::string &name, int grade)
+	: _name(name), _grade(grade)
+{
+	std::cout << GRN
+			  << "Bureaucrat's parameterized constructor called, attributes:"
+			  << std::endl
+			  << *this << NC;
+}
+
 Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(150)
 {
 	std::cout << GRN << "Bureaucrat's default constructor called, attributes:"
