@@ -14,6 +14,7 @@
 #define FORM_HPP
 
 #include <Color.hpp>
+#include <Defines.hpp>
 #include <iostream>
 #include <ostream>
 #include <string>
