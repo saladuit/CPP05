@@ -34,6 +34,7 @@ class AForm
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	void beSigned(const Bureaucrat &bureaucrat);
+	void execute(const Bureaucrat &executor) const;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -53,6 +54,18 @@ class AForm
 		}
 	};
 
+	class FormNotSignedException : public std::exception
+	{
+	  public:
+		virtual const char *what() const throw()
+		{
+			return (RED "AForm exception: Form is not signed" NC);
+		}
+	};
+
+  protected:
+	virtual void executeAction(const Bureaucrat &executor) const = 0;
+
   private:
 	const std::string _name;
 	bool _is_signed;
@@ -64,4 +77,5 @@ std::ostream &operator<<(std::ostream &out, const AForm &a_form);
 
 #endif
 
-/* ************************************************************************** */
+/* **************************************************************************
+ */

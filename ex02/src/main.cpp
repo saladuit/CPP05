@@ -57,8 +57,16 @@ void testSignFormAlreadySigned()
 // 						MAX_GRADE - 1);
 // }
 
+void testAFormIsAbstract()
+{
+	// AForm form;
+}
+
 int main()
 {
+	std::cout << "\n--Uncomment to Test abstraction of AForm--\n";
+	testAFormIsAbstract();
+
 	// std::cout << "\n--Testing constructors--\n";
 	// testConstructors();
 	// std::cout << "\n--Testing Parameterized constructor--\n";

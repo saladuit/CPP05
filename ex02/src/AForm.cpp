@@ -41,9 +41,17 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 		throw AForm::GradeTooLowException();
 	_is_signed = bureaucrat.signAForm(this->_name, this->_is_signed);
 }
+void AForm::execute(const Bureaucrat &executor) const
+{
+	std::cout << BCYN << "Checking grade to execute paper" << NC << std::endl;
+	if (executor.getGrade() > _grade_to_execute)
+		throw AForm::GradeTooLowException();
+	if (!_is_signed)
+		throw AForm::FormNotSignedException();
+	executeAction(executor);
+}
 
-/* **************************Orthodox_Canonical_Form*************************
- */
+/* **************************Orthodox_Canonical_Form************************* */
 
 AForm::AForm(const std::string &name, const int grade_to_sign,
 			 const int grade_to_execute)
@@ -53,9 +61,9 @@ AForm::AForm(const std::string &name, const int grade_to_sign,
 	std::cout << GRN << "AForm's parameterized constructor called, attributes:"
 			  << std::endl
 			  << *this << NC;
-	if (_grade_to_sign < MAX_GRADE || _grade_to_execute < MAX_GRADE)
+	if (grade_to_sign < MAX_GRADE || grade_to_execute < MAX_GRADE)
 		throw AForm::GradeTooHighException();
-	if (_grade_to_sign > MIN_GRADE || _grade_to_execute > MIN_GRADE)
+	if (grade_to_sign > MIN_GRADE || grade_to_execute > MIN_GRADE)
 		throw AForm::GradeTooLowException();
 }
 AForm::AForm()
