@@ -30,12 +30,34 @@
 // 	}
 // }
 
+void tryToCreateInstance(const std::string &name, const int grade_to_sign,
+						 const int grade_to_execute)
+{
+	try
+	{
+		Form form(name, grade_to_sign, grade_to_execute);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
 void testConstructors()
 {
 	Form ticket;
 
 	Form contract(ticket);
 	contract = ticket;
+	tryToCreateInstance("Parameterized", MIN_GRADE / 2, MIN_GRADE / 2);
+	tryToCreateInstance("ParameterizedSignTooLow", MIN_GRADE + 1,
+						MIN_GRADE / 2);
+	tryToCreateInstance("ParameterizedExecuteTooLow", MIN_GRADE / 2,
+						MIN_GRADE + 1);
+	tryToCreateInstance("ParameterizedSignTooHigh", MAX_GRADE - 1,
+						MIN_GRADE / 2);
+	tryToCreateInstance("ParameterizedExecuteTooHigh", MIN_GRADE / 2,
+						MAX_GRADE - 1);
 }
 
 int main()
