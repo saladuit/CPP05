@@ -88,9 +88,8 @@ Form::~Form()
 
 std::ostream &operator<<(std::ostream &out, const Form &form)
 {
-	bool result = form.getSignedness();
 	out << "Name: " << form.getName() << std::endl
-		<< "Signed: " << (result ? "true" : "false") << std::endl
+		<< "Signed: " << (form.getSignedness() ? "true" : "false") << std::endl
 		<< "Grade required to sign: " << form.getGradeToSign() << std::endl
 		<< "Grade required to execute: " << form.getGradeToExecute()
 		<< std::endl;
