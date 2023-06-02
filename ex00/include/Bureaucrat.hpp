@@ -26,7 +26,7 @@ class Bureaucrat
 	Bureaucrat(const Bureaucrat &rhs);
 	Bureaucrat &operator=(const Bureaucrat &rhs);
 	~Bureaucrat();
-	std::string getName() const;
+	const std::string &getName() const;
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
@@ -55,6 +55,7 @@ class Bureaucrat
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
+
 #endif
 
 /* ************************************************************************** */

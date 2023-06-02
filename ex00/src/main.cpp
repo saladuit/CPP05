@@ -12,44 +12,44 @@
 
 #include <Bureaucrat.hpp>
 
-int main()
+void testGradeMod(void (Bureaucrat::*func)(), const int repeatCount)
 {
 	Bureaucrat joe;
-
-	std::cout << "\n--Testing with a valid grade--\n";
 	try
 	{
-		joe.incrementGrade();
-		std::cout << CYN << joe << NC << std::endl;
+		for (int i = 0; i < repeatCount; ++i)
+		{
+			(joe.*func)();
+		}
+		std::cout << CYN << joe << NC;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+}
 
-	std::cout << "\n--Testing GradeTooLowException--\n";
-	try
-	{
-		for (int i = 0; i < 2; i++)
-			joe.decrementGrade();
-		std::cout << joe << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+void testConstructors()
+{
+	Bureaucrat jack;
+	jack.incrementGrade();
+	std::cout << CYN << jack << NC;
 
-	std::cout << "\n--Testing GradeTooHighException--\n";
-	try
-	{
-		for (int i = 0; i < 150; i++)
-			joe.incrementGrade();
-		std::cout << joe << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	Bureaucrat jill(jack);
+	jill.incrementGrade();
+	std::cout << CYN << jill << NC;
+	jack = jill;
+}
+
+int main()
+{
+	std::cout << "\n--Testing constructors--\n";
+	testConstructors();
+
+	std::cout << "\n--Testing GradeModifications--\n";
+	testGradeMod(&Bureaucrat::incrementGrade, 1);
+	testGradeMod(&Bureaucrat::decrementGrade, 2);
+	testGradeMod(&Bureaucrat::incrementGrade, 150);
 
 	return (EXIT_SUCCESS);
 }
