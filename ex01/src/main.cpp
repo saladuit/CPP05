@@ -20,6 +20,18 @@ int main()
 	try
 	{
 		joe.incrementGrade();
+		std::cout << CYN << joe << NC << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << "\n--Testing GradeTooLowException--\n";
+	try
+	{
+		for (int i = 0; i < 2; i++)
+			joe.decrementGrade();
 		std::cout << joe << std::endl;
 	}
 	catch (std::exception &e)
@@ -30,22 +42,8 @@ int main()
 	std::cout << "\n--Testing GradeTooHighException--\n";
 	try
 	{
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 150; i++)
 			joe.incrementGrade();
-		std::cout << joe << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-	joe.decrementGrade();
-
-	std::cout << "\n--Testing GradeTooLowException--\n";
-	try
-	{
-		for (int i = 0; i < 151; i++)
-			joe.decrementGrade();
 		std::cout << joe << std::endl;
 	}
 	catch (std::exception &e)
