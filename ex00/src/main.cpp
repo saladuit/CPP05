@@ -12,16 +12,26 @@
 
 #include <Bureaucrat.hpp>
 
-void testGradeMod(void (Bureaucrat::*func)(), const int repeatCount)
+void testGradeMod(void (Bureaucrat::*func)(), const std::string name,
+				  const int age)
 {
-	Bureaucrat joe;
 	try
 	{
-		for (int i = 0; i < repeatCount; ++i)
-		{
-			(joe.*func)();
-		}
+		Bureaucrat joe(name, age);
+		(joe.*func)();
 		std::cout << CYN << joe << NC;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void tryToCreateInstance(const std::string &name, int grade)
+{
+	try
+	{
+		Bureaucrat bureaucrat(name, grade);
 	}
 	catch (std::exception &e)
 	{
@@ -39,6 +49,9 @@ void testConstructors()
 	jill.incrementGrade();
 	std::cout << CYN << jill << NC;
 	jack = jill;
+	tryToCreateInstance("John", MAX_GRADE / 2);
+	tryToCreateInstance("JohnMaxBound", MAX_GRADE - 1);
+	tryToCreateInstance("JohnMinBound", MIN_GRADE + 1);
 }
 
 int main()
@@ -47,9 +60,12 @@ int main()
 	testConstructors();
 
 	std::cout << "\n--Testing GradeModifications--\n";
-	testGradeMod(&Bureaucrat::incrementGrade, 1);
-	testGradeMod(&Bureaucrat::decrementGrade, 2);
-	testGradeMod(&Bureaucrat::incrementGrade, 150);
+	testGradeMod(&Bureaucrat::incrementGrade, "Test Increment", MIN_GRADE / 2);
+	testGradeMod(&Bureaucrat::decrementGrade, "Test Decrement", MIN_GRADE / 2);
+	testGradeMod(&Bureaucrat::incrementGrade, "Test Increment over Max",
+				 MAX_GRADE);
+	testGradeMod(&Bureaucrat::decrementGrade, "Test Decrement over Min",
+				 MIN_GRADE);
 
 	return (EXIT_SUCCESS);
 }
