@@ -22,7 +22,7 @@
 class Form
 {
   public:
-	Form(const std::string &name, const int grade_to_sing,
+	Form(const std::string &name, const int grade_to_sign,
 		 const int grade_to_execute);
 	Form();
 	Form(const Form &rhs);
