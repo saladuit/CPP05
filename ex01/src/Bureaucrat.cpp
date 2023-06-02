@@ -14,7 +14,7 @@
 
 /* **************************Public_member_functions************************* */
 
-std::string Bureaucrat::getName() const
+const std::string &Bureaucrat::getName() const
 {
 	return (_name);
 }
@@ -44,14 +44,17 @@ void Bureaucrat::decrementGrade()
 
 Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(150)
 {
-	std::cout << GRN << *this << " called default constructor" << NC
-			  << std::endl;
+	std::cout << GRN << "Bureaucrat's default constructor called, attributes:"
+			  << std::endl
+			  << *this << NC;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 	: _name(rhs._name), _grade(rhs._grade)
 {
-	std::cout << GRN << *this << " called Copy constructor" << NC << std::endl;
+	std::cout << GRN << "Bureaucrat's copy constructor called, attributes:"
+			  << std::endl
+			  << *this << NC;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
@@ -60,8 +63,10 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 	{
 		_name = rhs._name;
 		_grade = rhs._grade;
-		std::cout << GRN << *this << " called assignment operator" << NC
-				  << std::endl;
+		std::cout << GRN
+				  << "Bureaucrat's assignment operator called, attributes:"
+				  << std::endl
+				  << *this << NC;
 	}
 	return (*this);
 }
@@ -74,8 +79,8 @@ Bureaucrat::~Bureaucrat()
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
-	out << bureaucrat.getName() << ", bureaucrat grade "
-		<< bureaucrat.getGrade();
+	out << "Name: " << bureaucrat.getName() << std::endl
+		<< "Grade: " << bureaucrat.getGrade() << std::endl;
 	return (out);
 }
 
