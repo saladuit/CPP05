@@ -26,7 +26,7 @@ bool Form::getSignedness() const
 
 int Form::getGradeToSign() const
 {
-	return (_grade);
+	return (_grade_to_sign);
 }
 
 int Form::getGradeToExecute() const
@@ -36,25 +36,33 @@ int Form::getGradeToExecute() const
 
 /* **************************Orthodox_Canonical_Form************************* */
 
-Form::Form() : _name("Form"), _grade(150)
+Form::Form()
+	: _name("Form"), _is_signed(false), _grade_to_sign(150),
+	  _grade_to_execute(150)
 {
-	std::cout << GRN << *this << " called default constructor" << NC
-			  << std::endl;
+	std::cout << GRN
+			  << "Form's default constructor called, attributes:" << std::endl
+			  << *this << NC;
 }
 
-Form::Form(const Form &rhs) : _name(rhs._name), _grade(rhs._grade)
+Form::Form(const Form &rhs)
+	: _name(rhs._name), _is_signed(rhs._is_signed),
+	  _grade_to_sign(rhs._grade_to_sign),
+	  _grade_to_execute(rhs._grade_to_execute)
 {
-	std::cout << GRN << *this << " called Copy constructor" << NC << std::endl;
+	std::cout << GRN
+			  << "Form's copy constructor called, attributes:" << std::endl
+			  << *this << NC;
 }
 
 Form &Form::operator=(const Form &rhs)
 {
 	if (this != &rhs)
 	{
-		_name = rhs._name;
-		_grade = rhs._grade;
-		std::cout << GRN << *this << " called assignment operator" << NC
-				  << std::endl;
+		_is_signed = rhs._is_signed;
+		std::cout << GRN << "Form's assignment operator called, attributes:"
+				  << std::endl
+				  << *this << NC;
 	}
 	return (*this);
 }
@@ -67,7 +75,12 @@ Form::~Form()
 
 std::ostream &operator<<(std::ostream &out, const Form &form)
 {
-	out << form.getName() << ", form grade " << form.getGrade();
+	bool result = form.getSignedness();
+	out << "Name: " << form.getName() << std::endl
+		<< "Signed: " << (result ? "true" : "false") << std::endl
+		<< "Grade required to sign: " << form.getGradeToSign() << std::endl
+		<< "Grade required to execute: " << form.getGradeToExecute()
+		<< std::endl;
 	return (out);
 }
 

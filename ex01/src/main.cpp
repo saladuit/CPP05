@@ -11,34 +11,31 @@
 /* ************************************************************************** */
 
 #include <Bureaucrat.hpp>
+#include <Form.hpp>
 
-void testGradeMod(void (Bureaucrat::*func)(), const int repeatCount)
-{
-	Bureaucrat joe;
-	try
-	{
-		for (int i = 0; i < repeatCount; ++i)
-		{
-			(joe.*func)();
-		}
-		std::cout << CYN << joe << NC;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+// void testGradeMod(void (Bureaucrat::*func)(), const int repeatCount)
+// {
+// 	Bureaucrat joe;
+// 	try
+// 	{
+// 		for (int i = 0; i < repeatCount; ++i)
+// 		{
+// 			(joe.*func)();
+// 		}
+// 		std::cout << CYN << joe << NC;
+// 	}
+// 	catch (std::exception &e)
+// 	{
+// 		std::cout << e.what() << std::endl;
+// 	}
+// }
 
 void testConstructors()
 {
-	Bureaucrat jack;
-	jack.incrementGrade();
-	std::cout << CYN << jack << NC;
+	Form ticket;
 
-	Bureaucrat jill(jack);
-	jill.incrementGrade();
-	std::cout << CYN << jill << NC;
-	jack = jill;
+	Form contract(ticket);
+	contract = ticket;
 }
 
 int main()
@@ -46,10 +43,10 @@ int main()
 	std::cout << "\n--Testing constructors--\n";
 	testConstructors();
 
-	std::cout << "\n--Testing GradeModifications--\n";
-	testGradeMod(&Bureaucrat::incrementGrade, 1);
-	testGradeMod(&Bureaucrat::decrementGrade, 2);
-	testGradeMod(&Bureaucrat::incrementGrade, 150);
+	// std::cout << "\n--Testing GradeModifications--\n";
+	// testGradeMod(&Bureaucrat::incrementGrade, 1);
+	// testGradeMod(&Bureaucrat::decrementGrade, 2);
+	// testGradeMod(&Bureaucrat::incrementGrade, 150);
 
 	return (EXIT_SUCCESS);
 }
