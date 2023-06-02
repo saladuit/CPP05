@@ -36,7 +36,7 @@ class Bureaucrat
 	  public:
 		virtual const char *what() const throw()
 		{
-			return (RED "Grade is too high" NC);
+			return (RED "Bureaucrat exception: Grade is too high" NC);
 		}
 	};
 
