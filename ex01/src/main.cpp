@@ -95,20 +95,18 @@ int main()
 {
 	std::cout << "\n--Testing constructors--\n";
 	testConstructors();
+
 	std::cout << "\n--Testing Parameterized constructor--\n";
 	testParameterizedConstructor();
+
 	std::cout << "\n--Testing SignForm--\n";
 	testSignForm();
+
 	std::cout << "\n--Testing SignForm GradeTooLowException--\n";
 	testSignFormGradeTooLowException();
+
 	std::cout << "\n--Testing SignForm already signed--\n";
 	testSignFormAlreadySigned();
-
-	// std::cout << "\n--Testing GradeModifications--\n";
-	// testGradeMod(&Bureaucrat::incrementGrade, 1);
-	// testGradeMod(&Bureaucrat::decrementGrade, 2);
-	// testGradeMod(&Bureaucrat::incrementGrade, 150);
-
 	return (EXIT_SUCCESS);
 }
 
