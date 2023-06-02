@@ -22,6 +22,8 @@
 class Form
 {
   public:
+	Form(const std::string &name, const int grade_to_sing,
+		 const int grade_to_execute);
 	Form();
 	Form(const Form &rhs);
 	Form &operator=(const Form &rhs);

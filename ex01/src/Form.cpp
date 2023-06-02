@@ -36,6 +36,19 @@ int Form::getGradeToExecute() const
 
 /* **************************Orthodox_Canonical_Form************************* */
 
+Form::Form(const std::string &name, const int grade_to_sign,
+		   const int grade_to_execute)
+	: _name(name), _is_signed(false), _grade_to_sign(grade_to_sign),
+	  _grade_to_execute(grade_to_execute)
+{
+	if (_grade_to_sign < MAX_GRADE || _grade_to_execute < MAX_GRADE)
+		throw Form::GradeTooHighException();
+	if (_grade_to_sign > MIN_GRADE || _grade_to_execute > MIN_GRADE)
+		throw Form::GradeTooLowException();
+	std::cout << GRN << "Form's parameterized constructor called, attributes:"
+			  << std::endl
+			  << *this << NC;
+}
 Form::Form()
 	: _name("Form"), _is_signed(false), _grade_to_sign(150),
 	  _grade_to_execute(150)
