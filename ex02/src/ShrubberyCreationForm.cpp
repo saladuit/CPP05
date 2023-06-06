@@ -11,8 +11,19 @@
 /* ************************************************************************** */
 
 #include <ShrubberyCreationForm.hpp>
+#include <fstream>
 
 /* **************************Public_member_functions************************* */
+
+void ShrubberyCreationForm::executeAction(const Bureaucrat &executor) const
+{
+	AForm::execute(executor);
+	std::string filename = this->_target + "_shrubbery";
+	std::ofstream file(filename.c_str());
+	file << " _-_" << std::endl;
+	file << " / \\ " << std::endl;
+	file.close();
+}
 
 /* **************************Orthodox_Canonical_Form************************* */
 
