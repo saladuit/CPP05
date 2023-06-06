@@ -11,12 +11,16 @@
 /* ************************************************************************** */
 
 #include <AForm.hpp>
+#include <ShrubberyCreationForm.hpp>
 
 void testSignFormAlreadySigned()
 {
 	try
 	{
 		Bureaucrat jonas("Jonas", 50);
+		ShrubberyCreationForm form("home");
+		form.beSigned(jonas);
+		form.execute(jonas);
 	}
 	catch (std::exception &e)
 	{
