@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include <Bureaucrat.hpp>
 
 /* **************************Public_member_functions************************* */
@@ -40,17 +41,18 @@ void Bureaucrat::decrementGrade()
 		_grade++;
 }
 
-bool Bureaucrat::signForm(const std::string &form_name, bool is_signed) const
+void Bureaucrat::signForm(Form &form) const
 {
-	if (is_signed)
+	if (form.getSignedness())
 	{
-		std::cout << YEL << _name << " couldn't " << form_name << " because "
-				  << form_name << " is already signed" << NC << std::endl;
-		return (false);
+		std::cout << YEL << _name << " couldn't " << form.getName()
+				  << " because " << form.getName() << " is already signed" << NC
+				  << std::endl;
+		return;
 	}
-	else
-		std::cout << CYN << _name << " signed " << form_name << NC << std::endl;
-	return (true);
+	form.beSigned(*this);
+	std::cout << CYN << _name << " signed " << form.getName() << NC
+			  << std::endl;
 }
 /* **************************Orthodox_Canonical_Form************************* */
 

@@ -20,6 +20,8 @@
 #include <ostream>
 #include <string>
 
+class Form;
+
 class Bureaucrat
 {
   public:
@@ -32,7 +34,7 @@ class Bureaucrat
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
-	bool signForm(const std::string &form_name, bool is_signed) const;
+	void signForm(Form &form) const;
 
 	class GradeTooHighException : public std::exception
 	{
