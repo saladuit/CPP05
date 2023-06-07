@@ -11,15 +11,18 @@
 /* ************************************************************************** */
 
 #include <ShrubberyCreationForm.hpp>
-#include <fstream>
 
 /* **************************Public_member_functions************************* */
 
-void ShrubberyCreationForm::executeAction(const Bureaucrat &executor) const
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
 	AForm::execute(executor);
+	std::ofstream file;
+	file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
 	std::string filename = this->_target + "_shrubbery";
-	std::ofstream file(filename.c_str());
+	file.open(filename.c_str());
+	if (file.fail())
+		throw FileNotOpenException();
 	file << " _-_" << std::endl;
 	file << " / \\ " << std::endl;
 	file.close();
@@ -28,32 +31,39 @@ void ShrubberyCreationForm::executeAction(const Bureaucrat &executor) const
 /* **************************Orthodox_Canonical_Form************************* */
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: AForm("ShrubberyCreationForm", SIGN_GRADE, EXEC_GRADE), _target(target)
+	: AForm("ShrubberyCreationForm", SHUB_SIGN_GRADE, SHUB_EXEC_GRADE),
+	  _target(target)
 {
-	std::cout << GRN
-			  << "ShrubberyCreationForm's parameterized constructor called, "
+	std::cout << MAG
+			  << "ShrubberyCreationForm" GRN
+				 "'s parameterized constructor called, "
 				 "attributes:"
 			  << std::endl
-			  << *this << NC;
+			  << *this << "Target: " << _target << std::endl
+			  << NC;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: AForm("ShrubberyCreationForm", SIGN_GRADE, EXEC_GRADE), _target("default")
+	: AForm("ShrubberyCreationForm", SHUB_SIGN_GRADE, SHUB_EXEC_GRADE),
+	  _target("default")
 {
-	std::cout
-		<< GRN
-		<< "ShrubberyCreationForm's default constructor called, attributes:"
-		<< std::endl
-		<< *this << NC;
+	std::cout << MAG
+			  << "ShrubberyCreationForm" GRN
+				 "'s default constructor called, attributes:"
+			  << std::endl
+			  << *this << "Target: " << _target << std::endl
+			  << NC;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)
 	: AForm(src), _target(src._target)
 {
-	std::cout << GRN
-			  << "ShrubberyCreationForm's copy constructor called, attributes:"
+	std::cout << MAG
+			  << "ShrubberyCreationForm" GRN
+				 "'s copy constructor called, attributes:"
 			  << std::endl
-			  << *this << NC;
+			  << *this << "Target: " << _target << std::endl
+			  << NC;
 }
 
 ShrubberyCreationForm &
@@ -62,11 +72,12 @@ ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
 	if (this != &rhs)
 	{
 		AForm::operator=(rhs);
-		std::cout
-			<< GRN
-			<< "ShrubberyCreationForm's assignment operator called, attributes:"
-			<< std::endl
-			<< *this << NC;
+		std::cout << MAG
+				  << "ShrubberyCreationForm" GRN
+					 "'s assignment operator called, attributes:"
+				  << std::endl
+				  << *this << "Target: " << _target << std::endl
+				  << NC;
 	}
 	return (*this);
 }

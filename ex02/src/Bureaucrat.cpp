@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <AForm.hpp>
 #include <Bureaucrat.hpp>
 
 /* **************************Public_member_functions************************* */
@@ -40,25 +41,35 @@ void Bureaucrat::decrementGrade()
 		_grade++;
 }
 
-bool Bureaucrat::signAForm(const std::string &form_name, bool is_signed) const
+void Bureaucrat::signAForm(AForm &form) const
 {
-	if (is_signed)
+	if (form.getSignedness())
 	{
-		std::cout << YEL << _name << " couldn't " << form_name << " because "
-				  << form_name << " is already signed" << NC << std::endl;
-		return (false);
+		std::cout << YEL << _name << " couldn't " << form.getName()
+				  << " because " << form.getName() << " is already signed" << NC
+				  << std::endl;
+		return;
 	}
-	else
-		std::cout << CYN << _name << " signed " << form_name << NC << std::endl;
-	return (true);
+	form.beSigned(*this);
+	std::cout << CYN << _name << " signed " << form.getName() << NC
+			  << std::endl;
 }
+
+void Bureaucrat::executeAForm(AForm const &form) const
+{
+	form.execute(*this);
+	std::cout << CYN << _name << " executed " << form.getName() << NC
+			  << std::endl;
+}
+
 /* **************************Orthodox_Canonical_Form************************* */
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	: _name(name), _grade(grade)
 {
-	std::cout << GRN
-			  << "Bureaucrat's parameterized constructor called, attributes:"
+	std::cout << MAG
+			  << "Bureaucrat" GRN
+				 "'s parameterized constructor called, attributes:"
 			  << std::endl
 			  << *this << NC;
 	if (_grade < MAX_GRADE)
@@ -69,7 +80,8 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
 
 Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(MIN_GRADE)
 {
-	std::cout << GRN << "Bureaucrat's default constructor called, attributes:"
+	std::cout << MAG
+			  << "Bureaucrat" GRN "'s default constructor called, attributes:"
 			  << std::endl
 			  << *this << NC;
 }
@@ -77,7 +89,8 @@ Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(MIN_GRADE)
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 	: _name(rhs._name), _grade(rhs._grade)
 {
-	std::cout << GRN << "Bureaucrat's copy constructor called, attributes:"
+	std::cout << MAG
+			  << "Bureaucrat" GRN "'s copy constructor called, attributes:"
 			  << std::endl
 			  << *this << NC;
 }
@@ -87,8 +100,9 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 	if (this != &rhs)
 	{
 		_grade = rhs._grade;
-		std::cout << GRN
-				  << "Bureaucrat's assignment operator called, attributes:"
+		std::cout << MAG
+				  << "Bureaucrat" GRN
+					 "'s assignment operator called, attributes:"
 				  << std::endl
 				  << *this << NC;
 	}

@@ -39,8 +39,9 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 	std::cout << BCYN << "Checking grade to sign paper" << NC << std::endl;
 	if (bureaucrat.getGrade() > _grade_to_sign)
 		throw AForm::GradeTooLowException();
-	_is_signed = bureaucrat.signAForm(this->_name, this->_is_signed);
+	_is_signed = true;
 }
+
 void AForm::execute(const Bureaucrat &executor) const
 {
 	std::cout << BCYN << "Checking grade to execute paper" << NC << std::endl;
@@ -48,7 +49,6 @@ void AForm::execute(const Bureaucrat &executor) const
 		throw AForm::GradeTooLowException();
 	if (!_is_signed)
 		throw AForm::FormNotSignedException();
-	executeAction(executor);
 }
 
 /* **************************Orthodox_Canonical_Form************************* */
@@ -58,7 +58,8 @@ AForm::AForm(const std::string &name, const int grade_to_sign,
 	: _name(name), _is_signed(false), _grade_to_sign(grade_to_sign),
 	  _grade_to_execute(grade_to_execute)
 {
-	std::cout << GRN << "AForm's parameterized constructor called, attributes:"
+	std::cout << MAG
+			  << "AForm" GRN "'s parameterized constructor called, attributes:"
 			  << std::endl
 			  << *this << NC;
 	if (grade_to_sign < MAX_GRADE || grade_to_execute < MAX_GRADE)
@@ -66,12 +67,13 @@ AForm::AForm(const std::string &name, const int grade_to_sign,
 	if (grade_to_sign > MIN_GRADE || grade_to_execute > MIN_GRADE)
 		throw AForm::GradeTooLowException();
 }
+
 AForm::AForm()
-	: _name("Paper"), _is_signed(false), _grade_to_sign(150),
-	  _grade_to_execute(150)
+	: _name("Paper"), _is_signed(false), _grade_to_sign(MIN_GRADE),
+	  _grade_to_execute(MIN_GRADE)
 {
-	std::cout << GRN
-			  << "AForm's default constructor called, attributes:" << std::endl
+	std::cout << MAG << "AForm" GRN "'s default constructor called, attributes:"
+			  << std::endl
 			  << *this << NC;
 }
 
@@ -80,8 +82,8 @@ AForm::AForm(const AForm &rhs)
 	  _grade_to_sign(rhs._grade_to_sign),
 	  _grade_to_execute(rhs._grade_to_execute)
 {
-	std::cout << GRN
-			  << "AForm's copy constructor called, attributes:" << std::endl
+	std::cout << MAG << "AForm" GRN "'s copy constructor called, attributes:"
+			  << std::endl
 			  << *this << NC;
 }
 
@@ -90,7 +92,8 @@ AForm &AForm::operator=(const AForm &rhs)
 	if (this != &rhs)
 	{
 		_is_signed = rhs._is_signed;
-		std::cout << GRN << "AForm's assignment operator called, attributes:"
+		std::cout << MAG
+				  << "AForm" GRN "'s assignment operator called, attributes:"
 				  << std::endl
 				  << *this << NC;
 	}

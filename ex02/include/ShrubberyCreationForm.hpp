@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include <AForm.hpp>
+#include <fstream>
 
-#define SIGN_GRADE 145
-#define EXEC_GRADE 137
+#define SHUB_SIGN_GRADE 145
+#define SHUB_EXEC_GRADE 137
 
 class ShrubberyCreationForm : public AForm
 {
@@ -23,7 +24,7 @@ class ShrubberyCreationForm : public AForm
 	ShrubberyCreationForm(const ShrubberyCreationForm &src);
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
 	~ShrubberyCreationForm();
-	void executeAction(const Bureaucrat &executor) const;
+	void execute(const Bureaucrat &executor) const;
 
 	class FileNotOpenException : public std::exception
 	{

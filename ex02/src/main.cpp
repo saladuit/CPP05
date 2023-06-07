@@ -13,14 +13,14 @@
 #include <AForm.hpp>
 #include <ShrubberyCreationForm.hpp>
 
-void testSignFormAlreadySigned()
+void testShubberuyCreationConstuctors()
 {
 	try
 	{
-		Bureaucrat jonas("Jonas", 50);
-		ShrubberyCreationForm form("home");
-		form.beSigned(jonas);
-		form.execute(jonas);
+		ShrubberyCreationForm form("bonsai");
+		ShrubberyCreationForm form2(form);
+		ShrubberyCreationForm form3;
+		form3 = form2;
 	}
 	catch (std::exception &e)
 	{
@@ -28,65 +28,77 @@ void testSignFormAlreadySigned()
 	}
 }
 
-// void tryToCreateInstance(const std::string &name, const int grade_to_sign,
-// 						 const int grade_to_execute)
-// {
-// 	try
-// 	{
-// 		Form form(name, grade_to_sign, grade_to_execute);
-// 	}
-// 	catch (std::exception &e)
-// 	{
-// 		std::cout << e.what() << std::endl;
-// 	}
-// }
-//
-// void testConstructors()
-// {
-// 	Form ticket;
-// 	Form contract(ticket);
-// 	contract = ticket;
-// }
-//
-// void testParameterizedConstructor()
-// {
-// 	tryToCreateInstance("Parameterized", MIN_GRADE / 2, MIN_GRADE / 2);
-// 	tryToCreateInstance("ParameterizedSignTooLow", MIN_GRADE + 1,
-// 						MIN_GRADE / 2);
-// 	tryToCreateInstance("ParameterizedExecuteTooLow", MIN_GRADE / 2,
-// 						MIN_GRADE + 1);
-// 	tryToCreateInstance("ParameterizedSignTooHigh", MAX_GRADE - 1,
-// 						MIN_GRADE / 2);
-// 	tryToCreateInstance("ParameterizedExecuteTooHigh", MIN_GRADE / 2,
-// 						MAX_GRADE - 1);
-// }
-
-void testAFormIsAbstract()
+void testShubberyCreationForm()
 {
-	// AForm form;
+	try
+	{
+		Bureaucrat jonas("Jonas", SHUB_EXEC_GRADE);
+		ShrubberyCreationForm form("bonsai");
+		jonas.signAForm(form);
+		jonas.executeAForm(form);
+		system("rm -rf bonsai_shrubbery");
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void testShubberyCreationFormSignTooLow()
+{
+	try
+	{
+		Bureaucrat jonas("Jonas", SHUB_SIGN_GRADE + 1);
+		ShrubberyCreationForm form("bonsai");
+		jonas.signAForm(form);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void testShubberyCreationFormExecuteTooLow()
+{
+	try
+	{
+		Bureaucrat jonas("Jonas", SHUB_EXEC_GRADE + 1);
+		ShrubberyCreationForm form("bonsai");
+		jonas.signAForm(form);
+		jonas.executeAForm(form);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void testShubberyCreationFormNotSigned()
+{
+	try
+	{
+		Bureaucrat jonas("Jonas", SHUB_EXEC_GRADE);
+		ShrubberyCreationForm form("bonsai");
+		jonas.executeAForm(form);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 int main()
 {
-	std::cout << "\n--Uncomment to Test abstraction of AForm--\n";
-	testAFormIsAbstract();
-
-	// std::cout << "\n--Testing constructors--\n";
-	// testConstructors();
-	// std::cout << "\n--Testing Parameterized constructor--\n";
-	// testParameterizedConstructor();
-	// std::cout << "\n--Testing SignForm--\n";
-	// testSignForm();
-	// std::cout << "\n--Testing SignForm GradeTooLowException--\n";
-	// testSignFormGradeTooLowException();
-	std::cout << "\n--Testing SignForm already signed--\n";
-	testSignFormAlreadySigned();
-
-	// std::cout << "\n--Testing GradeModifications--\n";
-	// testGradeMod(&Bureaucrat::incrementGrade, 1);
-	// testGradeMod(&Bureaucrat::decrementGrade, 2);
-	// testGradeMod(&Bureaucrat::incrementGrade, 150);
-
+	std::cout << "\n--Testing Shubbery Creation Form Constructors--\n";
+	testShubberuyCreationConstuctors();
+	std::cout << "\n--Testing Shubbery Creation Form--\n";
+	testShubberyCreationForm();
+	std::cout << "\n--Testing Shubbery Creation Form Sign Too Low--\n";
+	testShubberyCreationFormSignTooLow();
+	std::cout << "\n--Testing Shubbery Creation Form Exec Too Low--\n";
+	testShubberyCreationFormExecuteTooLow();
+	std::cout << "\n--Testing Shubbery Creation Form not signed--\n";
+	testShubberyCreationFormNotSigned();
 	return (EXIT_SUCCESS);
 }
 
